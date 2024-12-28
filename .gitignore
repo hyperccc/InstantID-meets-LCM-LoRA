@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# 大文件
+checkpoints/
+*.safetensors
+*.bin
+*.onnx
+models/
+*.pth
+*.pt
+
+# 其他
+.DS_Store
+.vscode/
