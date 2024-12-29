@@ -62,15 +62,6 @@ Comparison with pre-trained character LoRAs. We don't need multiple images and s
 
 Comparison with InsightFace Swapper (also known as ROOP or Refactor). However, in non-realistic style, our work is more flexible on the integration of face and background.
 
-### Kolors Version
-
-We have adapted InstantID for [Kolors](https://huggingface.co/Kwai-Kolors/Kolors-diffusers). Leveraging Kolors' robust text generation capabilities 👍👍👍, InstantID can be integrated with Kolors to simultaneously generate **ID** and **text**.
-
-
-| demo | demo | demo |
-|:-----:|:-----:|:-----:|
-<img src="./assets/kolor/demo_1.jpg" >|<img src="./assets/kolor/demo_2.jpg" >|<img src="./assets/kolor/demo_3.jpg" >|
-
 
 
 ## Download
@@ -109,6 +100,14 @@ For face encoder, you need to manually download via this [URL](https://github.co
   └── README.md
 ```
 
+## Train your own LCM-LoRA 
+https://github.com/huggingface/diffusers/tree/main/examples/consistency_distillation
+```python
+    #Load pretrain LCM_LoRA weights
+    lcm_lora_path = "./checkpoints/pytorch_lora_weights.safetensors"
+    pipe.load_lora_weights(lcm_lora_path)
+    pipe.fuse_lora()
+    pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
 ## Usage
 
 If you want to reproduce results in the paper, please refer to the code in [infer_full.py](infer_full.py). If you want to compare the results with other methods, even without using depth-controlnet, it is recommended that you use this code. 
