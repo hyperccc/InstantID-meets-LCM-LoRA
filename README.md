@@ -108,6 +108,7 @@ https://github.com/huggingface/diffusers/tree/main/examples/consistency_distilla
     pipe.load_lora_weights(lcm_lora_path)
     pipe.fuse_lora()
     pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
+```
 ## Usage
 
 If you want to reproduce results in the paper, please refer to the code in [infer_full.py](infer_full.py). If you want to compare the results with other methods, even without using depth-controlnet, it is recommended that you use this code. 
