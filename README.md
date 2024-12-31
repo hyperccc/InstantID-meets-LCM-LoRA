@@ -100,7 +100,7 @@ For face encoder, you need to manually download via this [URL](https://github.co
   └── README.md
 ```
 
-## Train your own LCM-LoRA 
+## Train your own LCM-LoRA & Speedup
 https://github.com/huggingface/diffusers/tree/main/examples/consistency_distillation
 ```python
     #Load pretrain LCM_LoRA weights
@@ -189,28 +189,6 @@ pipe.enable_model_cpu_offload()
 pipe.enable_vae_tiling()
 ```
 
-## Speed Up with LCM-LoRA
-
-Our work is compatible with [LCM-LoRA](https://github.com/luosiallen/latent-consistency-model). First, download the model.
-
-```python
-from huggingface_hub import hf_hub_download
-hf_hub_download(repo_id="latent-consistency/lcm-lora-sdxl", filename="pytorch_lora_weights.safetensors", local_dir="./checkpoints")
-```
-
-To use it, you just need to load it and infer with a small num_inference_steps. Note that it is recommendated to set guidance_scale between [0, 1].
-```python
-from diffusers import LCMScheduler
-
-lcm_lora_path = "./checkpoints/pytorch_lora_weights.safetensors"
-
-pipe.load_lora_weights(lcm_lora_path)
-pipe.fuse_lora()
-pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
-
-num_inference_steps = 10
-guidance_scale = 0
-```
 
 ## Start a local gradio demo <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>
 Run the following command:
