@@ -68,6 +68,7 @@ For face encoder, you need to manually download via this [URL](https://github.co
 https://github.com/huggingface/diffusers/tree/main/examples/consistency_distillation.
 **Speedup**
 We have integrated it into a function, making it very easy to use and reproduce. Just follow the codes as follows. 
+
 ```python
     #Load pretraind LCM_LoRA weights
     lcm_lora_path = "./checkpoints/pytorch_lora_weights.safetensors"
