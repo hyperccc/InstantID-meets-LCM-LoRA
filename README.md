@@ -24,6 +24,9 @@ InstantID is a new state-of-the-art tuning-free method to achieve ID-Preserving 
 
 <img src='assets/applications.png'>
 
+## Our work is based on InstantID
+https://instantid.github.io
+
 ## Download
 
 You can directly download the model from [Huggingface](https://huggingface.co/InstantX/InstantID).
@@ -61,9 +64,9 @@ For face encoder, you need to manually download via this [URL](https://github.co
 ```
 
 ## Train your own LCM-LoRA & Speedup(What we called InstantID Meets LCM-LoRA)
-#Train LCM-LoRA
+# Train LCM-LoRA
 https://github.com/huggingface/diffusers/tree/main/examples/consistency_distillation
-#Speedup
+# Speedup
 We have integrated it into a function, making it very easy to use and reproduce. Just follow the codes as follows. 
 ```python
     #Load pretraind LCM_LoRA weights
