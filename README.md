@@ -24,46 +24,6 @@ InstantID is a new state-of-the-art tuning-free method to achieve ID-Preserving 
 
 <img src='assets/applications.png'>
 
-## Release
-- [2024/07/18] 🔥 We are training InstantID for [Kolors](https://huggingface.co/Kwai-Kolors/Kolors-diffusers). The weight requires significant computational power, which is currently in the process of iteration. After the model training is completed, it will be open-sourced. The latest checkpoint results are referenced in [Kolors Version](#kolors-version). 
-- [2024/04/03] 🔥 We release our recent work [InstantStyle](https://github.com/InstantStyle/InstantStyle) for style transfer, compatible with InstantID!
-- [2024/02/01] 🔥 We have supported LCM acceleration and Multi-ControlNets on our [Huggingface Spaces Demo](https://huggingface.co/spaces/InstantX/InstantID)! Our depth estimator is supported by [Depth-Anything](https://github.com/LiheYoung/Depth-Anything).
-- [2024/01/31] 🔥 [OneDiff](https://github.com/siliconflow/onediff?tab=readme-ov-file#easy-to-use) now supports accelerated inference for InstantID, check [this](https://github.com/siliconflow/onediff/blob/main/benchmarks/instant_id.py) for details!
-- [2024/01/23] 🔥 Our pipeline has been merged into [diffusers](https://github.com/huggingface/diffusers/blob/main/examples/community/pipeline_stable_diffusion_xl_instantid.py)!
-- [2024/01/22] 🔥 We release the [pre-trained checkpoints](https://huggingface.co/InstantX/InstantID), [inference code](https://github.com/InstantID/InstantID/blob/main/infer.py) and [gradio demo](https://huggingface.co/spaces/InstantX/InstantID)!
-- [2024/01/15] 🔥 We release the [technical report](https://arxiv.org/abs/2401.07519).
-- [2023/12/11] 🔥 We launch the [project page](https://instantid.github.io/).
-
-## Demos
-
-### Stylized Synthesis
-
-<p align="center">
-  <img src="assets/StylizedSynthesis.png">
-</p>
-
-### Comparison with Previous Works
-
-<p align="center">
-  <img src="assets/compare-a.png">
-</p>
-
-Comparison with existing tuning-free state-of-the-art techniques. InstantID achieves better fidelity and retain good text editability (faces and styles blend better).
-
-<p align="center">
-  <img src="assets/compare-c.png">
-</p>
-
-Comparison with pre-trained character LoRAs. We don't need multiple images and still can achieve competitive results as LoRAs without any training.
-
-<p align="center">
-  <img src="assets/compare-b.png">
-</p>
-
-Comparison with InsightFace Swapper (also known as ROOP or Refactor). However, in non-realistic style, our work is more flexible on the integration of face and background.
-
-
-
 ## Download
 
 You can directly download the model from [Huggingface](https://huggingface.co/InstantX/InstantID).
@@ -100,7 +60,7 @@ For face encoder, you need to manually download via this [URL](https://github.co
   └── README.md
 ```
 
-## Train your own LCM-LoRA & Speedup
+## Train your own LCM-LoRA & Speedup(What we called InstantID Meets LCM-LoRA)
 https://github.com/huggingface/diffusers/tree/main/examples/consistency_distillation
 ```python
     #Load pretrain LCM_LoRA weights
